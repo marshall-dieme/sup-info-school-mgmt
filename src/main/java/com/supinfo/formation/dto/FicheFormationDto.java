@@ -22,13 +22,10 @@ public class FicheFormationDto extends AbstractDto<String> {
     private String reference;
 
     private List<JoursDeCours> joursDeCours;
-    @CheckDate
-    @DateTimeFormat(style = "hh:mm")
-    @JsonDeserialize(using = LocalTimeDeserializer.class)
-    private Date heureDeDebut;
-    @CheckDate
-    @JsonDeserialize(using = LocalTimeDeserializer.class)
-    private Date heureDeFin;
+
+    private String heureDeDebut;
+
+    private String heureDeFin;
     private List<Prestation> prestations;
 
     public FicheFormationDto() {
@@ -50,19 +47,19 @@ public class FicheFormationDto extends AbstractDto<String> {
         return this.joursDeCours;
     }
 
-    public void setHeureDeDebut(Date heureDeDebut) {
+    public void setHeureDeDebut(String heureDeDebut) {
         this.heureDeDebut = heureDeDebut;
     }
 
-    public Date getHeureDeDebut() {
+    public String getHeureDeDebut() {
         return this.heureDeDebut;
     }
 
-    public void setHeureDeFin(Date heureDeFin) {
+    public void setHeureDeFin(String heureDeFin) {
         this.heureDeFin = heureDeFin;
     }
 
-    public Date getHeureDeFin() {
+    public String getHeureDeFin() {
         return this.heureDeFin;
     }
 

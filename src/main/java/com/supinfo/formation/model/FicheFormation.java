@@ -19,11 +19,11 @@ public class FicheFormation {
     @Column(name = "jour")
     private List<String> joursDeCours;
 
-    @Temporal(TemporalType.TIME)
-    private Date heureDeDebut;
+    @Column(columnDefinition = "time")
+    private LocalTime heureDeDebut;
 
-    @Temporal(TemporalType.TIME)
-    private Date heureDeFin;
+    @Column(columnDefinition = "time")
+    private LocalTime heureDeFin;
 
     @OneToMany
     private List<Prestation> prestations;
@@ -35,7 +35,7 @@ public class FicheFormation {
     public FicheFormation() {
     }
 
-    public FicheFormation(String reference, List<String> joursDeCours, Date heureDeDebut, Date heureDeFin, List<Prestation> prestations, Etudiant etudiant) {
+    public FicheFormation(String reference, List<String> joursDeCours, LocalTime heureDeDebut, LocalTime heureDeFin, List<Prestation> prestations, Etudiant etudiant) {
         this.reference = reference;
         this.joursDeCours = joursDeCours;
         this.heureDeDebut = heureDeDebut;
@@ -60,19 +60,19 @@ public class FicheFormation {
         this.joursDeCours = joursDeCours;
     }
 
-    public Date getHeureDeDebut() {
+    public LocalTime getHeureDeDebut() {
         return heureDeDebut;
     }
 
-    public void setHeureDeDebut(Date heureDeDebut) {
+    public void setHeureDeDebut(LocalTime heureDeDebut) {
         this.heureDeDebut = heureDeDebut;
     }
 
-    public Date getHeureDeFin() {
+    public LocalTime getHeureDeFin() {
         return heureDeFin;
     }
 
-    public void setHeureDeFin(Date heureDeFin) {
+    public void setHeureDeFin(LocalTime heureDeFin) {
         this.heureDeFin = heureDeFin;
     }
 
