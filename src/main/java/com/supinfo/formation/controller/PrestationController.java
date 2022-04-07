@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@RequestMapping("/prestation")
+@RequestMapping("/api/prestation")
 @RestController
 @Slf4j
 @Api("prestation")

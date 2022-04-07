@@ -3,10 +3,16 @@ package com.supinfo.formation.dto;
 import com.supinfo.formation.annotation.CheckDate;
 import com.supinfo.formation.model.Prestation;
 import io.swagger.annotations.ApiModel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
 @ApiModel()
+@NoArgsConstructor
+@Getter
+@Setter
 public class DetailPrestationDto extends AbstractDto<Long> {
     private long id;
     @CheckDate
@@ -14,38 +20,4 @@ public class DetailPrestationDto extends AbstractDto<Long> {
     private String duree;
     private Prestation prestation;
 
-    public DetailPrestationDto() {
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getId() {
-        return this.id;
-    }
-
-    public void setDate(java.time.LocalDate date) {
-        this.date = date;
-    }
-
-    public java.time.LocalDate getDate() {
-        return this.date;
-    }
-
-    public void setDuree(String duree) {
-        this.duree = duree;
-    }
-
-    public String getDuree() {
-        return this.duree;
-    }
-
-    public void setPrestation(Prestation prestation) {
-        this.prestation = prestation;
-    }
-
-    public Prestation getPrestation() {
-        return this.prestation;
-    }
 }

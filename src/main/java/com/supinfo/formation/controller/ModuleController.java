@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@RequestMapping("/module")
+@RequestMapping("/api/module")
 @RestController
 @Slf4j
 @Api("module")

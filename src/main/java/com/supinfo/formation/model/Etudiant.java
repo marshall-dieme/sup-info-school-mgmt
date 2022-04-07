@@ -1,5 +1,7 @@
 package com.supinfo.formation.model;
 
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -7,6 +9,11 @@ import javax.persistence.OneToOne;
 import java.time.LocalDate;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class Etudiant extends Personne{
 
     @Column(columnDefinition = "date")
@@ -20,26 +27,4 @@ public class Etudiant extends Personne{
         return ficheFormation;
     }
 
-    public Etudiant() {
-    }
-
-    public Etudiant(long id, String nom, String prenom, String telephone, String email, LocalDate dateNaissance) {
-        super(id, nom, prenom, telephone, email);
-        this.dateNaissance = dateNaissance;
-    }
-
-    public LocalDate getDateNaissance() {
-        return dateNaissance;
-    }
-
-    public void setDateNaissance(LocalDate dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }
-
-    @Override
-    public String toString() {
-        return "Etudiant{" + super.toString() +
-                "dateNaissance=" + dateNaissance +
-                '}';
-    }
 }

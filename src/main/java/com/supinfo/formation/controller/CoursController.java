@@ -47,7 +47,7 @@ public class CoursController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") long id) {
         Optional.ofNullable(coursService.findById(id)).orElseThrow(() -> {
-            //log.error("Unable to delete non-existent data！");
+            log.error("Unable to delete non-existent data！");
             return null;
         });
         coursService.deleteById(id);

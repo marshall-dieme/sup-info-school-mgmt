@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@RequestMapping("/fiche-formation")
+@RequestMapping("/api/fiche-formation")
 @RestController
 @Slf4j
 @Api("fiche-formation")
