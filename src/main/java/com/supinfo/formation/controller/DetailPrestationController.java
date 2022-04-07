@@ -7,6 +7,8 @@ import com.supinfo.formation.model.DetailPrestation;
 import com.supinfo.formation.service.DetailPrestationService;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -22,10 +24,12 @@ import java.util.stream.Collectors;
 
 @RequestMapping("/api/detail-prestation")
 @RestController
-@Slf4j
 @Api("detail-prestation")
 public class DetailPrestationController {
     private final DetailPrestationService detailPrestationService;
+
+    private final Logger log = LoggerFactory.getLogger(ModuleController.class);
+
 
     public DetailPrestationController(DetailPrestationService detailPrestationService) {
         this.detailPrestationService = detailPrestationService;

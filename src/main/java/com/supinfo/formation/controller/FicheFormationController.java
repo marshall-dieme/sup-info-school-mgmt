@@ -7,6 +7,8 @@ import com.supinfo.formation.model.FicheFormation;
 import com.supinfo.formation.service.FicheFormationService;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -22,11 +24,11 @@ import java.util.stream.Collectors;
 
 @RequestMapping("/api/fiche-formation")
 @RestController
-@Slf4j
 @Api("fiche-formation")
 public class FicheFormationController {
     private final FicheFormationService ficheFormationService;
 
+    private final Logger log = LoggerFactory.getLogger(ModuleController.class);
     public FicheFormationController(FicheFormationService ficheFormationService) {
         this.ficheFormationService = ficheFormationService;
     }

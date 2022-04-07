@@ -7,6 +7,8 @@ import com.supinfo.formation.model.Cours;
 import com.supinfo.formation.service.CoursService;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -22,11 +24,11 @@ import java.util.stream.Collectors;
 
 @RequestMapping("/api/cours")
 @RestController
-@Slf4j
 @Api("cours")
 public class CoursController {
     private final CoursService coursService;
 
+    private final Logger log = LoggerFactory.getLogger(ModuleController.class);
 
     public CoursController(CoursService coursService) {
         this.coursService = coursService;
