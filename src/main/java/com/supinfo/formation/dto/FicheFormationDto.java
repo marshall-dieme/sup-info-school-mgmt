@@ -1,20 +1,12 @@
 package com.supinfo.formation.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
-import com.supinfo.formation.annotation.CheckDate;
 import com.supinfo.formation.enums.JoursDeCours;
 import com.supinfo.formation.model.Prestation;
-import com.supinfo.formation.utils.LocalTimeDeserializer;
 import io.swagger.annotations.ApiModel;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.Size;
-import java.time.LocalTime;
-import java.util.Date;
 import java.util.List;
+
 
 @ApiModel()
 public class FicheFormationDto extends AbstractDto<String> {
