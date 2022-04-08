@@ -1,6 +1,7 @@
 package com.supinfo.formation.dto;
 
 import com.supinfo.formation.annotation.CheckDate;
+import com.supinfo.formation.model.FicheFormation;
 import io.swagger.annotations.ApiModel;
 
 import javax.validation.constraints.Email;
@@ -20,7 +21,17 @@ public class EtudiantDto extends AbstractDto<Long> {
     @CheckDate
     private Date dateNaissance;
 
+    private FicheFormation ficheFormation;
+
     public EtudiantDto() {
+    }
+
+    public FicheFormation getFicheFormation() {
+        return ficheFormation;
+    }
+
+    public void setFicheFormation(FicheFormation ficheFormation) {
+        this.ficheFormation = ficheFormation;
     }
 
     public void setDateNaissance(Date dateNaissance) {

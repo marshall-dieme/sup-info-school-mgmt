@@ -15,9 +15,9 @@ public class Cours {
 
     private String volumeHoraire;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Etudiant> etudiants;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "professeur_id")
     private Professeur professeur;
 

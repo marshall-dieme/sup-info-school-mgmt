@@ -1,11 +1,13 @@
 package com.supinfo.formation.dto;
 
 import com.supinfo.formation.annotation.CheckEmail;
+import com.supinfo.formation.model.Cours;
 import io.swagger.annotations.ApiModel;
 
 import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @ApiModel()
 public class ProfesseurDto extends AbstractDto<Long> {
@@ -19,6 +21,8 @@ public class ProfesseurDto extends AbstractDto<Long> {
 
     @Size(max = 255)
     private String matricule;
+
+    private List<Cours> cours;
 
     public ProfesseurDto() {
     }
@@ -69,5 +73,13 @@ public class ProfesseurDto extends AbstractDto<Long> {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Cours> getCours() {
+        return cours;
+    }
+
+    public void setCours(List<Cours> cours) {
+        this.cours = cours;
     }
 }

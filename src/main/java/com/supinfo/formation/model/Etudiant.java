@@ -14,6 +14,7 @@ public class Etudiant extends Personne{
     @JoinColumn(name = "fiche_formation_reference")
     private FicheFormation ficheFormation;
 
+    @OneToOne
     public FicheFormation getFicheFormation() {
         return ficheFormation;
     }
@@ -32,6 +33,10 @@ public class Etudiant extends Personne{
 
     public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
+    }
+
+    public void setFicheFormation(FicheFormation ficheFormation) {
+        this.ficheFormation = ficheFormation;
     }
 
     @Override

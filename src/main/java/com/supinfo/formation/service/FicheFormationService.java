@@ -5,6 +5,7 @@ import com.supinfo.formation.mapper.FicheFormationMapper;
 import com.supinfo.formation.model.FicheFormation;
 import com.supinfo.formation.repository.FicheFormationRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

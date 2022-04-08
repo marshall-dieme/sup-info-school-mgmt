@@ -22,13 +22,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@RequestMapping("/api/fiche-formation")
+@RequestMapping("/fiche-formation")
 @RestController
 @Api("fiche-formation")
 public class FicheFormationController {
     private final FicheFormationService ficheFormationService;
+    private final Logger log = LoggerFactory.getLogger(FicheFormationController.class);
 
-    private final Logger log = LoggerFactory.getLogger(ModuleController.class);
     public FicheFormationController(FicheFormationService ficheFormationService) {
         this.ficheFormationService = ficheFormationService;
     }
@@ -49,7 +49,7 @@ public class FicheFormationController {
     public ResponseEntity<Void> delete(@PathVariable("id") String id) {
         Optional.ofNullable(ficheFormationService.findById(id)).orElseThrow(() -> {
             log.error("Unable to delete non-existent data！");
-            return null;
+            return new RuntimeException();
         });
         ficheFormationService.deleteById(id);
         return ResponseEntity.ok().build();

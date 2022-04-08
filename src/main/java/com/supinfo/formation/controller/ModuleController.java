@@ -56,7 +56,7 @@ public class ModuleController {
     }
 
     @GetMapping("/page-query")
-    public ResponseEntity<Page<ModuleDto>> pageQuery(ModuleDto moduleDto, @PageableDefault(sort = "createAt", direction = Sort.Direction.DESC) Pageable pageable) {
+    public ResponseEntity<Page<ModuleDto>> pageQuery(ModuleDto moduleDto, @PageableDefault(sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
         Page<ModuleDto> modulePage = moduleService.findByCondition(moduleDto, pageable);
         return ResponseEntity.ok(modulePage);
     }

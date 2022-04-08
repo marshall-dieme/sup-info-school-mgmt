@@ -20,22 +20,22 @@ public class FicheFormation {
     private List<String> joursDeCours;
 
     @Column(columnDefinition = "time")
-    private LocalTime heureDeDebut;
+    private String heureDeDebut;
 
     @Column(columnDefinition = "time")
-    private LocalTime heureDeFin;
+    private String heureDeFin;
 
     @OneToMany
     private List<Prestation> prestations;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "etudiant_id")
     private Etudiant etudiant;
 
     public FicheFormation() {
     }
 
-    public FicheFormation(String reference, List<String> joursDeCours, LocalTime heureDeDebut, LocalTime heureDeFin, List<Prestation> prestations, Etudiant etudiant) {
+    public FicheFormation(String reference, List<String> joursDeCours, String heureDeDebut, String heureDeFin, List<Prestation> prestations, Etudiant etudiant) {
         this.reference = reference;
         this.joursDeCours = joursDeCours;
         this.heureDeDebut = heureDeDebut;
@@ -60,19 +60,19 @@ public class FicheFormation {
         this.joursDeCours = joursDeCours;
     }
 
-    public LocalTime getHeureDeDebut() {
+    public String getHeureDeDebut() {
         return heureDeDebut;
     }
 
-    public void setHeureDeDebut(LocalTime heureDeDebut) {
+    public void setHeureDeDebut(String heureDeDebut) {
         this.heureDeDebut = heureDeDebut;
     }
 
-    public LocalTime getHeureDeFin() {
+    public String getHeureDeFin() {
         return heureDeFin;
     }
 
-    public void setHeureDeFin(LocalTime heureDeFin) {
+    public void setHeureDeFin(String heureDeFin) {
         this.heureDeFin = heureDeFin;
     }
 

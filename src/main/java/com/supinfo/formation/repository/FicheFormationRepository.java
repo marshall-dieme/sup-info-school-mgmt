@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FicheFormationRepository extends JpaRepository<FicheFormation, String> {
+public interface FicheFormationRepository extends JpaRepository<FicheFormation, String>, JpaSpecificationExecutor<FicheFormation> {
 }

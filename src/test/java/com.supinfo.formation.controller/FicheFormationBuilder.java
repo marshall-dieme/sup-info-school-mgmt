@@ -1,6 +1,5 @@
 package com.supinfo.formation.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.supinfo.formation.dto.FicheFormationDto;
 
 import java.util.Collections;

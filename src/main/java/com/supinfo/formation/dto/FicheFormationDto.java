@@ -1,24 +1,23 @@
 package com.supinfo.formation.dto;
 
-import com.supinfo.formation.enums.JoursDeCours;
+import com.supinfo.formation.model.Etudiant;
 import com.supinfo.formation.model.Prestation;
 import io.swagger.annotations.ApiModel;
 
 import javax.validation.constraints.Size;
 import java.util.List;
 
-
 @ApiModel()
 public class FicheFormationDto extends AbstractDto<String> {
     @Size(max = 50)
     private String reference;
-
-    private List<JoursDeCours> joursDeCours;
-
+    private List<String> joursDeCours;
+    @Size(max = 255)
     private String heureDeDebut;
-
+    @Size(max = 255)
     private String heureDeFin;
     private List<Prestation> prestations;
+    private Etudiant etudiant;
 
     public FicheFormationDto() {
     }
@@ -31,11 +30,11 @@ public class FicheFormationDto extends AbstractDto<String> {
         return this.reference;
     }
 
-    public void setJoursDeCours(List<JoursDeCours> joursDeCours) {
+    public void setJoursDeCours(java.util.List<String> joursDeCours) {
         this.joursDeCours = joursDeCours;
     }
 
-    public List<JoursDeCours> getJoursDeCours() {
+    public java.util.List<String> getJoursDeCours() {
         return this.joursDeCours;
     }
 
@@ -55,11 +54,19 @@ public class FicheFormationDto extends AbstractDto<String> {
         return this.heureDeFin;
     }
 
-    public void setPrestations(List<Prestation> prestations) {
+    public void setPrestations(java.util.List<com.supinfo.formation.model.Prestation> prestations) {
         this.prestations = prestations;
     }
 
     public java.util.List<com.supinfo.formation.model.Prestation> getPrestations() {
         return this.prestations;
+    }
+
+    public void setEtudiant(Etudiant etudiant) {
+        this.etudiant = etudiant;
+    }
+
+    public Etudiant getEtudiant() {
+        return this.etudiant;
     }
 }

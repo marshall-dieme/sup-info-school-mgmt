@@ -13,7 +13,7 @@ public class Module {
     private long id;
 
     private String intitule;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     List<Cours> cours;
 
     public Module() {
