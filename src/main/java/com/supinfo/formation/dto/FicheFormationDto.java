@@ -4,7 +4,10 @@ import com.supinfo.formation.model.Etudiant;
 import com.supinfo.formation.model.Prestation;
 import io.swagger.annotations.ApiModel;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @ApiModel()
@@ -12,11 +15,12 @@ public class FicheFormationDto extends AbstractDto<String> {
     @Size(max = 50)
     private String reference;
     private List<String> joursDeCours;
-    @Size(max = 255)
+    @Size(max = 2)
     private String heureDeDebut;
-    @Size(max = 255)
+    @Size(max = 2)
     private String heureDeFin;
     private List<Prestation> prestations;
+    @NotNull
     private Etudiant etudiant;
 
     public FicheFormationDto() {
@@ -68,5 +72,10 @@ public class FicheFormationDto extends AbstractDto<String> {
 
     public Etudiant getEtudiant() {
         return this.etudiant;
+    }
+
+    public String generateReference() {
+        SimpleDateFormat format = new SimpleDateFormat("ddMMyyyyHHmmss");
+        return format.format(LocalDateTime.now());
     }
 }

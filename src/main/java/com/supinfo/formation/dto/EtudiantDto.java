@@ -12,7 +12,9 @@ import java.util.Date;
 @ApiModel()
 public class EtudiantDto extends AbstractDto<Long> {
     private long id;
+    @Size(max = 20)
     private String nom;
+    @Size(max = 50)
     private String prenom;
     @Size(max = 20)
     private String telephone;
